@@ -1,0 +1,5 @@
+Nome do curso; Enfermagem
+Código do curso; 155541
+Número de vagas; 300
+Número de candidatos do sexo masculino; 1200
+Número de candidatos do sexo feminino; 1550

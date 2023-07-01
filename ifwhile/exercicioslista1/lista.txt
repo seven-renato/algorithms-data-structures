@@ -1,0 +1,867 @@
+1) Ler dois números. Somar os números lidos e, após, multiplicar o resultado da soma pelo primeiro número lido. Apresentar o resultado final.
+
+x = int(input("Digite um numero: "))
+y = int(input("Digite outro numero: "))
+soma = x + y
+print("A soma dos numeros lidos e: ", soma)
+somamultiplicar = soma * x
+print("A soma dos numeros multiplicados por", x, "e", somamultiplicar)
+
+-----------------------------------------------------------------------------
+2) Ler um número inteiro. Apresentar o seu antecessor e o seu sucessor.
+
+x = int(input("Insira um número: "))
+antecessor = x - 1
+sucessor = x + 1
+print(x, "- seu antecessor é =", antecessor, "sucessor =", sucessor)
+
+-----------------------------------------------------------------------------
+3) Ler um número inteiro. Apresentar o seu dobro e o seu triplo
+x = int(input("Insira um número: "))
+
+print("Seu dobro é: ",x*2)
+print("Seu triplo é: ", x*3)
+
+-----------------------------------------------------------------------------
+4) Ler 5 (cinco) números. Somar os números lidos e, após, multiplicar o resultado da soma pelo primeiro número lido. Apresentar o resultado final.
+
+cont = 0 
+soma = 0
+while cont < 5:
+    x = int(input("Insira um número: "))
+    soma += x
+    cont = cont + 1
+print(soma)
+
+-----------------------------------------------------------------------------
+5) Ler 5 (cinco) números inteiros. Exibir o antecessor e o sucessor de cada número.
+
+cont = 0 
+soma = 0
+while cont < 5:
+    x = int(input("Insira um número: "))
+    cont = cont + 1
+    print("antecessor: ", x-1, "sucessor: ", x+1)
+
+ou
+
+print("Insira cinco valores")
+x = int(input())
+y = int(input())
+z = int(input())
+k = int(input())
+h = int(input())
+#antecessores
+ax = x - 1
+ay = y - 1
+az = z - 1
+ak = k - 1
+ah = h - 1
+print("Os antecessores sao", ax, ay, az, ak, ah)
+#sucessores
+sx = x + 1
+sy = y + 1
+sz = z + 1
+sk = k + 1
+sh = h + 1
+print("Os sucessores sao", sx, sy, sz, sk, sh)
+-----------------------------------------------------------------------------
+6) Faça um algoritmo que apresente o maior de dois números introduzidos por teclado.
+
+def maiornumero2(x,y):
+    if x > y:
+        return(x)
+    else:
+        return(y)
+      
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+7) Faça um algoritmo que apresente o maior de três números introduzidos por teclado. Obs.: os três números introduzidos são diferentes entre si).
+
+def maiornumero3(x,y,z):
+    if x > y:
+        maior = x
+    else:
+        maior = y
+    if z > maior:
+        maior = z
+    return(maior)
+  
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+8) Faça um algoritmo que verifique se um determinado número é par ou impar.
+
+def parouimpar(x):
+  if x % 2 == 0:
+    return x,"é par."
+  else:
+    return x,"é impar."
+
+ou 
+
+x = (int(input())
+if x % 2 == 0:
+	print(x, “é par”)
+else:
+	print(x, “é impar”)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+9) Faça um algoritmo para multiplicar dois números, sem o recurso da operação de multiplicação.
+
+s = 0 
+cont = 0
+
+x = int(input("1) Número a ser multiplicado: "))
+y = int(input("2) Número a ser multiplicado: "))
+while cont < y:
+	s = s + x
+	cont = cont + 1
+print(s)
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+10) Faça um algoritmo que, ao receber os valores da largura e do comprimento de uma figura geométrica, detecte se esta é um quadrado ou um retângulo.
+
+x = int(input("Insira a largura: "))
+y = int(input("Insira o comprimento: "))
+
+if x == 0 or y == 0:
+    print(-1)
+elif x != y:
+    print("E retângulo.")
+else:
+    print("E quadrado.")
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+11) Imagine que em uma disciplina a nota final é obtida da seguinte forma: trabalho tem peso 25% e a prova tem peso 75%. Faça um algoritmo que calcule a nota final desta disciplina. Se a nota for inferior a 7,0, o algoritmo deve apresentar a mensagem “Está em exame.”. Caso contrário, deve apresentar a mensagem: “Aprovado com a nota X”.
+
+t = float(input("Insira a nota do trabalho: "))
+while t > 10 or t < 0:
+  t = float(input("Insira a nota do trabalho novamente (até 10): "))
+t *= 0.25
+
+prova = float(input("Insira a nota da prova: "))
+while prova > 10 or prova < 0:
+  prova = float(input("Insira a nota da prova novamente (até 10): "))
+prova *= 0.75
+
+nf = prova + t
+if  nf < 7:
+  print("Está em exame, nota:",nf)
+else:
+  print("Passou com a nota", nf)
+  
+--------------------------------------------------------------------------------------------------------------------
+12) A partir da altura, do sexo e do peso informados pelo usuário, construa um algoritmo que calcule o peso ideal e a variação (em valor absoluto e percentual). Após, informe se a pessoa está com peso elevado, normal ou inferior, levando-se em consideração o peso normal como uma variação de 8% para mais ou para menos.
+Utilize as seguintes fórmulas:
+a) para homens: (72,7 * h) – 58
+b) para mulheres: (62.1 * h) – 44.7
+
+s = int(input("Insira seu sexo (1) Homem (2) Mulher: "))
+w = float(input("Insira seu peso em kg: "))
+h = float(input("Insira sua altura(exemplo: 1.50m): "))
+if s == 1:
+    print("Certo, o sexo escolhido foi Homem.")
+    iw = ((72.7 * h) - 58 )
+else:
+    if s == 2:
+        print("Certo, o sexo escolhido foi mulher.")
+        iw = (62.1 * h) - 44.7
+
+iw = round(iw,2)
+print("Seu peso médio ideal devia estar entre: {}Kg < {}Kg < {}Kg".format(0.92*iw,iw,1.08*iw))
+if w >  1.08*iw:
+    print("Ou seja, o peso está elevado.")
+elif w < 0.92*iw:
+    print("Ou seja, o peso está abaixo do esperado.")
+else:
+    print("Ou seja, o peso está normal.")
+  
+--------------------------------------------------------------------------------------------------------------------
+14) Sabe-se que um automóvel viaja a uma velocidade média de 88 quilômetros por hora, por 4 (quatro) horas. Escreva um algoritmo que mostre a distância percorrida, em quilômetros, ao final de cada ½ (meia) hora, do início ao final da viagem.
+
+th = 4 #4hrs cada hora tem dois periodos de 30 minutos logo:
+t30min = 8
+v = 88#km/h
+xtotal = v * th
+#print(xtotal)
+x = v * 1/2 # kilometragem andada por meia hora(1/2 - metade de hora)
+#print(x)
+p = 0
+for i in range (1,t30min+1):
+    p = p + x
+    print("Na {}º meia-hora percorreu-se: {}Km".format(i,p))
+
+ou
+
+th = 4 #4hrs cada hora tem dois periodos de 30 minutos logo:
+t30min = 8
+v = 88#km/h
+xtotal = v * th
+#print(xtotal)
+x = v * 1/2 # kilometragem andada por meia hora(1/2 - metade de hora)
+#print(x)
+p = 0
+k = 1
+
+while k < (t30min+1):
+    p = p + x
+    print("Na {}º meia-hora percorreu-se: {}Km".format(k,p))
+    k = k + 1
+  
+--------------------------------------------------------------------------------------------------------------------
+15) Construa um algoritmo que, informadas três medidas a, b e c pelo usuário, verifique se elas podem ser lados de um triângulo. Se não puderem ser, primeiramente o algoritmo deve informar isso. Se for possível serem lados de triângulo, deve dizer qual tipo de triângulo pode ser construído com essas medidas (isósceles, escaleno ou equilátero). A condição para formar um triângulo: comprimento do maior segmento seja inferior à soma dos comprimentos dos dois menores.
+
+a = int(input())
+b = int(input())
+c = int(input())
+if (a > c + b) or (c > a + b) or (b > a + c) : #duvida
+    print("Não é triangulo! ")
+elif a == 0 or c == 0 or b == 0:
+    print("Não é triangulo! ")
+else:
+    if a == b and a == c:
+        print("É triangulo equilátero")
+    elif a != b != c and a != c:
+        print("Triangulo escaleno")
+    else:
+        print("Triangulo isoceles")
+      
+--------------------------------------------------------------------------------------------------------------------
+16) Construa um algoritmo para calcular as raízes de uma equação do 2º grau (Ax2 + Bx + C), sendo que os valores de A, B e C são informados pelo usuário.
+
+print('Vamos calcular o valor de x, na equação polinomial de grau 2 (ax^2 + bx + c).')
+a = float(input("Insira o valor de 'a': "))
+b = float(input("Insira o valor de 'b': "))
+c = float(input("Insira o valor de 'c': "))
+
+delta = b**2 - (4*a*c)
+x1 = (-b + delta**(1/2))/(2*a)
+x2 = (-b - delta**(1/2))/(2*a)
+if delta < 0:
+    print("Não tem raiz")
+elif delta == 0:
+    print(x1)
+else:
+    print('x1 é igual a: ', x1)
+    print('x2 é igual a: ', x2)
+  
+--------------------------------------------------------------------------------------------------------------------
+17) Construa um algoritmo que calcula a quantidade de litros de combustível gastos em uma viagem utilizando-se um automóvel que faz 14 km/litro. Para realizar este cálculo, o usuário deverá fornecer o tempo gasto da viagem e a velocidade média durante a mesma. O algoritmo deverá apresentar, como resultado, a distância percorrida e a quantidade de litros utilizada para a viagem.
+
+t = float(input("Insira o tempo total gasto na viagem(em horas): "))
+v = float(input("Insira velocidade media durante a viagem(em km/h): "))
+ 
+distancia = v*t
+eficiencia = 14#litro
+litros = distancia/eficiencia
+print("A distância percorrida foi de: ", distancia, "Km")
+print("A quantidade de litros usada foi de: ", round(litros,2),"L")
+
+--------------------------------------------------------------------------------------------------------------------
+18) Sobre o salário bruto de um funcionário, são descontados 8% de INSS, 10% de IR (Imposto de Renda) e, sobre o restante, 0,5% referente à filiação sindical. Ao ser fornecido o valor do salário bruto do funcionário, calcule:
+• Os descontos de INSS, IR e filiação sindical;
+• O total dos descontos;
+• O salário líquido.
+
+sb = float(input("Insira seu salário bruto: "))
+inss = sb * 0.08
+ir = sb * 0.1
+x = inss + ir
+ 
+fs = (sb - x) * 0.005 #filiação sindical
+ 
+td = ir+inss+fs#total de descontos
+sl = sb - td
+ 
+print("O INSS descontou do salário bruto um total de: ", inss)
+print("O Imposto de Renda descontou do salário bruto um total de: ", ir)
+print("A filiação sindical descontou do salário bruto um total de: ", fs)
+print("Inferindo num total de descontos de: ", td)
+print("Inferindo num salário liquido de: ", sl)
+
+--------------------------------------------------------------------------------------------------------------------
+19) Calcular a média aritmética final de um aluno, considerando que são realizadas duas provas e dois trabalhos, cujas notas são informadas pelo usuário. Tanto as provas como os trabalhos valem, no máximo, 10 pontos. As provas tem peso de 70% da nota final e os trabalhos tem peso 30% da nota final. No final do
+processamento, informar a média final do aluno, e verificar se o mesmo obteve uma média maior do que 7,0.
+
+t1 = float(input("Insira a nota do trabalho 1: "))
+while t1 > 10 or t1 < 0:
+  t1 = float(input("Insira a nota do trabalho 1: "))
+ 
+t2 = float(input("Insira a nota do trabalho 2: "))
+while t2 > 10 or t2 < 0:
+  t2 = float(input("Insira a nota do trabalho 2: "))
+trabalho = (t1+t2)*(0.30/2)
+ 
+prova1 = float(input("Insira a nota da prova 1: "))
+while prova1 > 10 or prova1 < 0:
+  prova1 = float(input("Insira a nota da prova 1: "))
+prova2 = float(input("Insira a nota da prova 2: "))
+while prova2 > 10 or prova2 < 0:
+  prova2 = float(input("Insira a nota da prova 2: "))
+ 
+provatotal = (prova1+prova2)*(0.70/2)
+ 
+notaf = (provatotal + trabalho)
+if notaf < 7:
+    print("Não passou. ")
+else:
+    print("Passou com nota media final de: ", round(notaf))
+  
+--------------------------------------------------------------------------------------------------------------------
+20) Ler, a partir do usuário, a idade de uma pessoa (expressa em anos, meses e dias – exemplo: 30 anos, 5 meses e 10 dias) e mostrá-la expressa apenas em dias. Assumir que cada mês possui 30 dias e o número de dias de um ano é sempre igual a 365.
+
+yy = int(input("Insira sua idade, em anos: "))
+ym = int(input("Agora quantos meses: "))
+yd = int(input("E por fim quantos dias: "))
+ 
+yemdias = (yy*365) + (ym*30) + yd
+print('Voce viveu por um total de: ', yemdias ,'dias.')
+
+'''
+yy = int(input("Insira sua idade, em anos: "))
+ym = int(input("Agora quantos meses: "))
+yd = int(input("E por fim quantos dias: "))
+
+anoatual = 2022
+cont = 1
+anonasc = anoatual-yy
+cont = anonasc
+soma = 0
+while cont <= anoatual:
+    if cont % 4 == 0:
+        soma = soma + 1
+    cont = cont + 1
+yemdias = (yy*365+soma) + (ym*30) + yd
+print('Voce viveu por um total de: ', yemdias ,'dias.')'''
+
+--------------------------------------------------------------------------------------------------------------------
+21) Criar um algoritmo que auxilie vendedores. A partir de um valor total informado para uma venda,
+mostrar:
+- o total a pagar, considerando um desconto de 10%, se for à vista;
+- o valor de cada parcela, no parcelamento de 3x sem juros;
+- a comissão do vendedor, no caso da venda ser a vista (5% sobre o valor com desconto);
+- a comissão do vendedor, no caso da venda ser parcelada (7% sobre o valor total).
+
+def venda(preço):
+    totalp = preço * 0.90
+    print("O preço total a vista com 10% de desconto é de: ", totalp, "R$")
+    parcelas = totalp / 3
+    print("Para 3x sem juros cada parcela sairá", round(parcelas,2),"R$")
+   
+    escolha = float(input("A vista(1) ou parcelado(2): "))
+   
+    comissiontotalp = (totalp) * 0.05
+    comissionparcela = (preço * 0.07)
+    if escolha == 1:
+        print("A comissão total do vendedor com a venda será de",comissiontotalp, "R$")
+    else:
+        print("A comissão total do vendedor com a venda será de",comissionparcela, "R$")
+      
+--------------------------------------------------------------------------------------------------------------------
+22) Um motorista deseja colocar no seu tanque X reais de combustível. Escreva um algoritmo para ler o preço do litro do combustível e o valor do pagamento. Ao final, exibir quantos litros ele conseguiu colocar no tanque. 
+  
+x = float(input("Preço da gasolina : "))
+y = float(input("Quanto será posto em dinheiro para a gasolina: "))
+ 
+litros = y/x
+ 
+print("Você conseguiu colocar um total de",round(litros,2),"Litros, de gasolina")
+
+--------------------------------------------------------------------------------------------------------------------
+23) Uma fábrica de camisetas produz os tamanhos pequeno, médio e grande, cada uma sendo vendida respectivamente por 10, 12 e 15 reais. Construa um algoritmo em que o usuário forneça a quantidade de camisetas pequenas, médias e grandes referentes a uma venda, e a máquina informe quanto será o valor arrecadado.
+
+s = int(input("Quantidade de camisetas pequenas: "))
+m = int(input("Quantidade de camisetas médias: "))
+b = int(input("Quantidade de camisetas grandes: "))
+ 
+ 
+print("O valor total a ser gasto com camisetas pequenas é de:", 10*s, "R$")
+print("O valor total a ser gasto com camisetas médias é de:", 12*m, "R$")
+print("O valor total a ser gasto com camisetas grandes é de:", 15*b, "R$")
+print("Valor total arrecadado foi de: ",(10*s)+(12*m)+(15*b))
+
+--------------------------------------------------------------------------------------------------------------------
+24) João recebeu seu salário de R$ 1200,00 e precisa pagar duas contas (C1 = R$ 200,00 e C2 = R$120,00) que estão atrasadas. Como as contas estão atrasadas, João terá de pagar multa de 2% sobre cada conta. Faça um algoritmo que calcule e mostre quanto restará do salário do João.
+
+sji = 1200
+C1 = 200
+C2 = 120 
+C1a = C1 * 1.02
+C2a = C2 * 1.02
+sjf = sji - (C1a + C2a) #salário final
+print("O restante do salário será igual a: ", sjf ,"R$")
+
+--------------------------------------------------------------------------------------------------------------------
+25) Desenvolva um fluxograma e um algoritmo em portugol que receba a velocidade de um veículo em km/h
+e exiba para o usuário esta velocidade em m/s.
+Obs.:
+De km/h para m/s divide-se por 3,6.
+De m/s para km/h multiplica-se por 3,6.
+ 
+y = int(input("Escolha se quer em km/h(1), ou m/s(2): "))
+while y > 2 or y < 1:
+    y = float(input("Escolha se quer em km/h (1), ou m/s (2): "))
+x = float(input("Digite a velocidade: "))
+ 
+if y == 1:
+    print("A velocidade em m/s é igual a:", round((x/3.6),2), "m/s")
+else:
+    print("A velocidade em km/h é igual a:", round((x*3.6),2), "km/h")
+--------------------------------------------------------------------------------------------------------------------
+26) Num dia de sol, você deseja medir a altura de um prédio, porém, a trena não é suficientemente longa. Assumindo que seja possível medir sua sombra e a do prédio no chão, e que você lembre a sua altura, faça um algoritmo para ler os dados necessários e calcular a altura do prédio.
+  
+print("Insira os valores em metros.")
+print("")
+hv = float(input("Insira a sua altura: "))
+sv = float(input("Insira o tamanho da sua sombra: "))
+sp = float(input("Insira o tamanho da sombra do prédio: "))
+hp = (sp/sv)* hv
+print('A altura do prédio é de:', round(hp,2))
+
+--------------------------------------------------------------------------------------------------------------------
+27) Dada a quantidade de alunos de uma turma, uma lista com o número de matrícula e a média desses alunos, faça um algoritmo que escreva as matrículas dos alunos que tenham a maior nota e a menor nota.
+
+menornota = 10000
+maiornota = -1
+numAlunos = int(input("Quantos alunos na turma? "))
+for i in range(numAlunos):
+  nome = input('Digite o nome do aluno: ')
+  nummat = input('Digite o número de matrícula do aluno: ')
+  medialu = int(input("Insira a média do aluno: "))
+  #map[nummat] = (nome, medialu)
+  if (medialu > maiornota):
+    maiornota = medialu
+    matricula_maior = nummat
+  if (medialu < menornota):
+    menornota = medialu
+    matricula_menor = nummat
+
+print("A menor nota é: ", menornota)
+print("A maior nota é: ", maiornota)
+
+'''
+4
+Paulo
+155241
+10
+Eduarda
+155363
+9
+Bruno
+156926
+6
+Weslei
+154345
+6
+'''
+
+--------------------------------------------------------------------------------------------------------------------
+28) Dado um número positivo, desenvolva um algoritmo que escreva todos os números positivos menores que esse número.
+def numabaixo(x):
+    cont = (x-1)
+    while cont > 0:
+        print(cont)
+        cont = cont - 1
+      
+--------------------------------------------------------------------------------------------------------------------
+29) Construa um algoritmo que calcula e mostra a tabela de depreciação para “n” anos de um determinado equipamento, a partir das informações fornecidas pelo usuário do valor da compra do equipamento e da taxa de depreciação por ano. Por exemplo, uma máquina comprada por R$28.000,00, se deprecia a uma taxa de R$4.000,00, por ano. A tabela de depreciação seria de sete anos, apresentando os seguintes valores:
+
+n = int(input("Tempo de depreciação: "))
+p = int(input("Preço da compra: "))
+while p < 0:
+    print("Erro, valor negativo.")
+    p = int(input("Preço da compra: "))
+d = int(input("Depreciação por ano: "))
+cont = 1
+print("Ano         Depreciação         Valor fim do ano        Depreciação Acumulada")
+while cont < n+1:
+    dacu = d * cont
+    fimd = p - dacu
+    print(f"{cont}           {d}                 {fimd:04}                  {dacu}")
+    cont = cont + 1
+--------------------------------------------------------------------------------------------------------------------
+31) Em um berçário, existe um fichário com informações sobre os bebês recém-nascidos. Cada ficha contém
+o número de identificação, o nome e o peso do bebê. Fazer um algoritmo que leia estas informações e
+verifique:
+a) o número, nome e o peso do bebê mais gordo;
+b) o número, nome e o peso do bebê mais magro;
+c) a média de peso dos bebês.
+
+  print("Digite 0 para acabar o código. ")
+print("-"*50)
+num = 1
+ptotal =  0
+cont = 0
+while num != 0:
+  num = int(input("Digite o nº de identificação: "))
+  if num == 0:
+    break
+  nome = input("Digite o nome do bebê: ")
+  peso = float(input("Digite o peso do bebê: "))
+  if cont == 0:
+    maior_peso = peso
+    menor_peso = peso
+    menor_nome = nome
+    maior_nome = nome
+    menor_num =  num
+    maior_num = num
+  elif maior_peso < peso:
+    maior_peso = peso
+    maior_nome = nome
+    maior_num = num
+  elif menor_peso > peso:
+    menor_peso = peso
+    menor_nome = nome
+    menor_num = num
+  cont +=1
+  ptotal += peso
+  media = ptotal/cont
+print(menor_peso,menor_nome,menor_num, maior_peso,maior_nome,maior_num)
+print("O menor peso é de: {} Kg, pertence ao bebê {}, sendo este de número: {}".format(menor_peso,menor_nome,menor_num))
+print("O maior peso é de: {} Kg, pertence ao bebê {}, sendo este de número: {}".format(maior_peso,maior_nome,maior_num))
+print("A médida total dos pesos foi de:", round(media,2))
+'''
+1
+P
+3
+11
+Eleven
+10
+12
+Twelve
+1
+0
+'''
+--------------------------------------------------------------------------------------------------------------------
+32) Com base na tabela abaixo, escreva um algoritmo que leia os códigos de cada item e a quantidade consumida. A seguir, calcule e mostre o valor total da conta a pagar. A leitura será encerrada com um código diferente daqueles utilizados na tabela.
+
+hotdog = 0
+xfit = 0
+xpança = 0
+torrada = 0
+refresco =0
+
+hot = 4.50
+xsalada = 4.50
+xbacon = 5
+toast = 2
+refri = 1.5
+x = int(input("Digite o codigo do item: "))
+while x < 6 and x > 0:
+    y = int(input("Digite a quantidade ingerida: "))
+    if x > 6 or x < 0:
+        break
+    if x == 1:
+        hotdog = hotdog + hot*y
+    elif x == 2:
+        xfit = xfit + xsalada*y
+    elif x == 3:
+        xpança += xbacon*y
+    elif x == 4:
+        torrada += toast*y
+    elif x == 5:
+        refresco += refri*y
+    x = int(input("Digite o codigo do item: "))
+
+print("O valor total da conta a pagar é:",(hotdog+xfit+xpança+torrada+refresco)),"R$"
+--------------------------------------------------------------------------------------------------------------------
+33) Faça um programa que, ao ler a quantidade de segundos de um dia, apresente o resultado na forma hh:mm:ss; por exemplo, para 34247s deve ser impresso 09:30:47. Note que deve haver uma mensagem de erro caso a quantidade de segundos seja maior que aqueles correspondentes às 24 horas do dia. x = 
+
+x = int(input("Insira a quantidade de segundos do dia: "))
+
+while x > 24*60*60:
+  print("Erro")
+  x = int(input("Insira a quantidade de segundos do dia(não pode passar de 24h): "))
+
+segundos = x%60
+minutos = x/60
+horas = int(minutos//60)#precisa virar inteiro pois vira string
+min = int(minutos%60)
+print(f"{horas:02}",min,segundos,sep=":")
+
+--------------------------------------------------------------------------------------------------------------------
+34) Escreva um algoritmo que leia informações sobre um grupo de 250 pessoas e calcule alguns dados estatísticos. Para cada pessoa do grupo, deve-se ler o nome da pessoa, a altura, o peso e o sexo (“F” para feminino e “M” para masculino). Calcular e escrever: a) A quantidade total de homens e mulheres e o percentual de cada; b) A média de peso das pessoas por sexo (somatório dos pesos de todas as pessoas pela quantidade de pessoas).
+nhomem = 0
+phomem = 0
+nmulher = 0
+pmulher = 0
+for i in range (20):
+    x = int(input("Escolha um sexo(1)H(2)M: "))
+    if x == 1:
+        nhomem += 1
+        z = int(input("Insira seu peso: "))
+        phomem += z
+    if x == 2:
+        nmulher += 1
+        k = int(input("Insira seu peso: "))
+        pmulher += k
+
+percentualh= (nhomem*100)/20
+percentualm = 100 - percentualh 
+medph = phomem/nhomem
+medpm = pmulher/nmulher
+print(f"A quantidade total de homens é de {nhomem}, e a de mulheres é de {nmulher}")
+print(f"O que resultou em uma escala de 100%: {percentualh}% homens  e {percentualm}% mulheres.")
+print(f"A média de peso para homens foi de {medph:.2f}Kg, e para mulheres de {medpm:.2f}Kg",)
+--------------------------------------------------------------------------------------------------------------------
+35) Um cubo de gelo, exposto a uma determinada temperatura, perde metade de sua massa a cada 50 segundos. Dada a massa inicial, em gramas, proponha um algoritmo que determine o tempo necessário para que a massa do cubo seja menor que 0,5 grama. Ao final, escreva o tempo calculado em horas, minutos e segundos. Considere que a massa inicial deverá ser um valor maior ou igual a 0,5 grama.
+
+def horasminutosseg (x):
+   while x > 24*60*60:
+    print("Erro")
+    x = int(input("Insira a quantidade de segundos do dia(não pode passar de 24h): "))
+
+   segundos = x%60
+   minutos = x/60
+   horas = int(minutos//60)#precisa virar inteiro pois vira string
+   min = int(minutos%60)
+   print(f"{horas:02}",min,segundos,sep=":")
+m = int(input("Insira a massa do cubo em gramas: "))
+cont = 0
+while m > 0.5:
+    m = m/2
+    cont = cont + 1
+cont = cont*50
+print(horasminutosseg(cont))
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FUNÇÕES
+def piramide(x, y):
+    cont = 0
+    space = y
+    letter = str(x)
+    while cont < y:
+        print(" "*space, letter)
+        letter += 2*str(x)
+        space -= 1
+        cont = cont + 1
+
+def escadinha(x,y):
+    cont = 0 
+    word = x
+    while cont < y:
+        print(word)
+        word = word + x
+        cont = cont + 1
+
+def fatorial(x):
+    cont = x
+    xfat = 1
+    while cont > 0:
+        xfat = xfat * cont
+        cont = cont - 1
+    return(xfat)
+
+def fibonnaci(x):
+    cont = 0
+    i = 1
+    j = 0
+    while cont < x:
+        print(j)
+        i = i + j 
+        j = i - j 
+        cont = cont + 1
+
+def eh_primo(x):
+    cont = 2
+    if x == 1 or x == 2:
+        return(True)
+    if x % 2 == 0:
+        return(False)
+    while cont < x:
+        if x % cont == 0:
+            return(False)
+        cont = cont + 1
+    return(True)
+
+def primosintervalo(x,y):
+    cont = 0
+    while cont < y+1:
+        if eh_primo(x) == True:
+            print(x)
+        cont = cont + 1
+        x = x + 1
+
+def intervaloprimo(x,y):
+    for i in range (x,y+1):
+        if eh_primo(i) == True:
+            print(i)
+
+def justify(num):#999
+  if num < 10:
+    saida = "0"
+  else: 
+    saida = " "
+  return(saida+num)
+
+def soma(x,y):
+  return(x+y)
+
+def subtracao(x,y):
+  return(x-y)
+
+def multiplicacao(x,y):
+  return(x*y)
+
+def divisao(x,y):
+  if y == 0:
+    return(-1)
+  else:
+    return(x/y)
+
+def exponenciacao(x,y):
+  if type(y) != int:
+    return(-1)
+  else:
+    return(x**y)
+
+def pi ():
+    k = 0#cont
+    y = 0
+    while k < 10000:
+        x = ((-1)**k)/((2*k)+1)
+        y = y + x
+        k = k + 1
+    pi = 4*(y)
+    return(pi) 
+
+def permutatacao(n,p):
+  permutacao = fatorial(n)/(fatorial(n-p))
+  return(permutacao)
+
+def combinacao(n,p):
+  combinacao = fatorial(n)/(fatorial(p)*(fatorial(n-p)))
+  return combinacao
+
+def somatorio (i,f):
+  x = (i-1)
+  somatorio = 0
+  if type(i) != int or type(f) != int:
+    return(-1)
+  if i > f:
+    return(0)
+  if i == f:
+    return(i)
+  while x < f:
+    somatorio = somatorio + (i)
+    i = i + 1
+    x = x + 1
+  return(somatorio)
+
+def exp(x):
+  k = 0
+  y = 0
+  while k < 100:
+    expx = (x**k)/fatorial(k)
+    k = k + 1
+    y = y + expx
+  return(y)
+
+def ln(x):
+  k = 0
+  y = 1
+  z = ((x-1)/(x+1))
+  v = 0
+  t = 0
+  while k < 101:
+    logex = z * ((1/y)*(z**v))
+    v = v + 2
+    y = y + 2
+    k = k + 1
+    t = t + logex
+  inx = 2*t
+  return(inx)
+
+def superExponenciacao(x,y):
+  return(exp(y*(ln(x))))
+
+def raizQuadrada(x):
+  return(exp(1/2*(ln(x))))
+
+def somalista(numeros):
+    soma = 0
+    for i in numeros:
+        soma = soma + i
+    return soma
+
+def somatorioentre (i,f):
+  x = i
+  somatorio = 0
+  if type(i) != int or type(f) != int:
+    return(-1)
+  if i > f:
+    return(0)
+  if i == f:
+    return(i)
+  while x < (f-1): #9 < 9
+    somatorio = somatorio + (i+1) #44
+    i = i + 1 #9
+    x = x + 1 #9
+  return(somatorio)
+
+def somatorioentre2 (i,f):
+  if type(i) != int or type(f) != int:
+    try:
+      i = int(i)
+      f = int(f)
+    except:
+      return(-1)
+  x = i
+  somatorio = 0
+  if i > f:
+    return(0)
+  if i == f:
+    return(i)
+  while x < (f-1): #9 < 9
+    somatorio = somatorio + (i+1) #44
+    i = i + 1 #9
+    x = x + 1 #9
+  return(somatorio)
+
+def data(x,y,z):
+  if ((x > 31 or x < 1) or (y > 12 or y < 1) or (z < 1)):
+      return("A data NÃO existe!")
+  elif (z % 4 == 0 and y == 2 and x > 29):
+      return("A data NÃO existe!")
+  elif (z % 4 != 0 and y == 2 and x > 28):
+      return("A data NÃO existe!")
+  elif ((y == 4 or y == 6 or y == 9 or y == 11) and x > 30):
+      return("A data NÃO existe!")
+  else:
+      return("A data existe!")
+
+def tabuada():
+  cont = 0
+  mult = 0
+  while cont < 11:
+    print("Tabuada do:", cont)
+    while mult < 11:
+      resultado = cont * mult
+      print(cont, "x", mult, "==", resultado)
+      mult = mult + 1
+    cont = cont + 1
+    mult = 0
+
+def fiborecursiva(x):
+    if x == 0:
+        return 0
+    elif x == 1:
+        return 1
+    return fiborecursiva(x-1) + fiborecursiva(x-2)
+
+def superDigit(n,k):
+    n = n*k
+    z = list(n)
+    valores = [int(val) for val in z]
+    j = sum(valores)
+    if j < 10:
+        return j
+    return superDigit(str(j),1) 
+
+def squareRoot2(n): 
+    if n == 0: 
+        return 2 
+    x = 2+1/squareRoot2(n-1) # a recursividade fica presa aqui até sair
+    return x
+
+
+
+
+

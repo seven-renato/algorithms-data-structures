@@ -1,0 +1,5 @@
+Nome do curso; Direito
+Código do curso; 155569
+Número de vagas; 500
+Número de candidatos do sexo masculino; 3000
+Número de candidatos do sexo feminino; 2900
